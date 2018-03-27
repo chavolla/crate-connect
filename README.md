@@ -23,6 +23,8 @@ var Crate = require('crate-connect');
 var db = new Crate({
   host: 'localhost', //Defaults to localhost
   port: 4200, //Defaults to 4200
+  //If required, it can added basic authentication credentials
+  auth:"user:password",
   // You can also send in a cluster of nodes
   cluster: [
       {
