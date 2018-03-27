@@ -24,7 +24,7 @@ Query.send = function Send(query, statements, callback, retry, nodeThis) {
         port:   node.port || 4200,
         //No need to specify Keep-Alive, node will use the default global agent
     }
-
+    if(node.auth){options["auth"] = node.auth;}
     if(!retry) retry = 0;
 
     var request = Http.request(options);
