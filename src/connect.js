@@ -14,6 +14,7 @@ var Connect = function Contructor(conf) {
     this.user = conf.user || null;
     this.pass = conf.pass || null;
     this.cluster = conf.cluster || [];
+    this.auth = conf.auth || false;
 
     if (this.cluster.length > 0) { //They sent an array with the host/port of each cluster
         this.lb_count = 0;
@@ -39,7 +40,8 @@ Connect.prototype.node = function Node() {
     else {
         return {
             host: this.host,
-            port: this.port
+            port: this.port,
+            auth:this.auth
         };
     }
 };
